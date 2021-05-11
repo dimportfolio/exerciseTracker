@@ -12,6 +12,7 @@ import Exercise  from '../../models/exercise'
 export class ExerciseEntryComponent implements OnInit {
   entries: Entry[] = [];
   exercise: Exercise[] = [];
+  entriesId: string = "";
 
   constructor(
     private exerciseService: ExerciseService,
@@ -29,10 +30,16 @@ export class ExerciseEntryComponent implements OnInit {
     .subscribe((entries: any) => this.entries = entries);
 
     this.route.params.subscribe((params: Params) => {
-      const entriesId = params.entriesId;
-      if(!entriesId) return;
-      this.exerciseService.getExercise(entriesId).subscribe((exercise: any) => this.exercise = exercise)
+      this.entriesId = params.entriesId;
+      if(!this.entriesId) return;
+      this.exerciseService.getExercise(this.entriesId).subscribe((exercise: any) => this.exercise = exercise)
     })
   }
 
+  deleteExercise(exercise: Exercise){
+    console.log(this.entriesId);
+    console.log(this.exercise);
+    this.exerciseService.deleteExercise(this.entriesId, exercise._id)
+    .subscribe((exercise: any) => {this.exercise = this.exercise.filter(e => e._id != exercise._id)})
+  }
 }

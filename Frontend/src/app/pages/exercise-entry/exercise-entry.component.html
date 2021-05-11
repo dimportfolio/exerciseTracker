@@ -5,7 +5,8 @@
         <div class="sidebar">
             <h1 class="title has-text-primary">Entries</h1>
             <div class="entry-menu">
-                <a href="#" class="entry-menu-item" *ngFor="let entry of entries">
+                <!-- routerLink is a directive -->
+                <a href="#" class="entry-menu-item" *ngFor="let entry of entries" [routerLink]="['/entries', entry._id]" routerLinkActive="is-active">
                     <p class="white-text">
                         Entry 1
                         {{ entry.title }}
@@ -22,7 +23,7 @@
                     {{ exercise.title }}
                     <br>
                     {{ exercise.set }} {{ exercise.rep }}
-                    <span class="pull-right task-delete btn-rounded-corners">X</span>
+                    <span class="pull-right task-delete btn-rounded-corners" (click)="deleteExercise(exercise)">X</span>
                 </p>
             </div>
         </div>

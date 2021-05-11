@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ExerciseEntryComponent } from './pages/exercise-entry/exercise-entry.component';
 
 const routes: Routes = [
-{ path: '', component: ExerciseEntryComponent},
+{ path: '', redirectTo: 'entries', pathMatch: 'full'},
+{ path: 'entries', component: ExerciseEntryComponent},
 { path: 'entries/:entriesId', component: ExerciseEntryComponent}
 ];
 

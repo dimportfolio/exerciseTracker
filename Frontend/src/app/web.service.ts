@@ -14,14 +14,17 @@ export class WebService {
   }
 
   post(uri: string, payload: object) {
-    return this.http.post(`${this.ROOT_URL}/${uri}`, payload)
+    console.log(uri)
+    return this.http.post(`${this.ROOT_URL}${uri}`, payload)
   }
 
   put(uri: string, payload: object) {
-    return this.http.put(`${this.ROOT_URL}/${uri}`, payload)
+    console.log(uri)
+    return this.http.put(`${this.ROOT_URL}${uri}`, payload)
   }
 
   delete(uri: string) {
-    return this.http.delete(`${this.ROOT_URL}/${uri}`)
+    console.log(uri)
+    return this.http.delete(`${this.ROOT_URL}${uri}`)
   }
 }

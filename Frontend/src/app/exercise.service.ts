@@ -18,27 +18,27 @@ export class ExerciseService {
     return this.webService.post('entries', {title});
   }
 
-  getExercise(listId: string){
-    return this.webService.get(`entries/${listId}/exercise`);
+  getExercise(entriesId: string){
+    return this.webService.get(`entries/${entriesId}/exercise`);
   }
 
-  createExercise(listId:string, title: string) {
-    return this.webService.post(`entries/${listId}/exercise`, {title});
+  createExercise(entriesId:string, title: string) {
+    return this.webService.post(`entries/${entriesId}/exercise`, {title});
   }
 
-  deleteEntries(listId: string){
-    return this.webService.delete(`/lists/${listId}`);
+  deleteEntries(entriesId: string){
+    return this.webService.delete(`/entries/${entriesId}`);
   }
 
-  deleteExercise(listId: string, exerciseId: string){
-    return this.webService.delete(`/lists/${listId}/exercise/${exerciseId}`);
+  deleteExercise(entriesId: string, exerciseId: string){
+    return this.webService.delete(`/entries/${entriesId}/exercise/${exerciseId}`);
   }
 
-  updateEntries(listId: string, entry: Entry){
-    return this.webService.put(`/lists/${listId}`, {entry});
+  updateEntries(entriesId: string, entry: Entry){
+    return this.webService.put(`/entries/${entriesId}`, {entry});
   }
 
-  updateExercises(listId: string, exercise: Exercise){
-    return this.webService.put(`/lists/${listId}/exercise/${exercise._id}`, {exercise});
+  updateExercises(entriesId: string, exercise: Exercise){
+    return this.webService.put(`/entries/${entriesId}/exercise/${exercise._id}`, {exercise});
   }
 }

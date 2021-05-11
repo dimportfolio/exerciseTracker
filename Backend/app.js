@@ -18,9 +18,10 @@ localhost:4200 - frontend
 //Enable our application to parse JSON data, the format that the data will be exchanged between the Front end and Back end
 app.use(express.json());
 
-//CORS (Cross Origin ? ?)
+//CORS (Cross Origin Resource Sharing Error Resolution - Create this Proxy)
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, HEAD, OPTIONS, PUT , PATCH, DELETE");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
