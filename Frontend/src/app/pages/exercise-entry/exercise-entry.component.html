@@ -1,0 +1,31 @@
+<div class="centered-content">
+
+    <div class="task-manager-container">
+
+        <div class="sidebar">
+            <h1 class="title has-text-primary">Entries</h1>
+            <div class="entry-menu">
+                <a href="#" class="entry-menu-item" *ngFor="let entry of entries">
+                    <p class="white-text">
+                        Entry 1
+                        {{ entry.title }}
+                        <span class="pull-right task-delete btn-rounded-corners">X</span>
+                    </p>
+                </a>
+            </div>
+            <button class="btn btn-primary btn-rounded-corners">Add Entry</button>
+        </div>
+        <div class="task-entry-container">
+            <h1 class="title has-text-primary">Exercises</h1>
+            <div class="task" *ngFor="let exercise of exercise">
+                <p class="white-text">
+                    {{ exercise.title }}
+                    <br>
+                    {{ exercise.set }} {{ exercise.rep }}
+                    <span class="pull-right task-delete btn-rounded-corners">X</span>
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,28 @@
+Things to improve
+
+1. Exercises should have GUI so that sets and reps can be grouped under each exercise
+
+ie:
+Squats
+sets 1 rep 10
+sets 2 rep 10
+sets 3 rep 10
+
+vs:
+squats
+sets 1 rep 10
+squats
+sets 2 rep 10
+
+
+2. The exercises should exist inside the component, currently the exercises are bleeding out when exceeding the height
+
+
+Scaling - Future ideas
+3. Add data metrics tab page, which will contain BI content 
+
+4. Add user creation capability to track and log your data
+
+5. Compare with other users in a x mile radius
+
+6. 
